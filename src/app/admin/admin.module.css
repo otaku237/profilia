@@ -1,0 +1,64 @@
+.page { min-height: 100vh; background: var(--bg); padding: 24px 20px 48px; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+.loading { display: flex; align-items: center; gap: 10px; color: var(--text2); padding: 48px 0; justify-content: center; }
+.spinner { width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.errorBox { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 64px 24px; text-align: center; font-size: 14px; color: var(--text2); }
+.errorBox div { font-size: 40px; }
+
+.header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.header h1 { font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+.header p { font-size: 13px; color: var(--text3); margin-top: 2px; }
+
+.backBtn { background: var(--bg2); border: 1px solid var(--border); color: var(--text2); border-radius: var(--radius-sm); padding: 8px 14px; font-size: 13px; white-space: nowrap; }
+.backBtn:hover { border-color: var(--border-hover); color: var(--text); }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+
+.kpi { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 4px; position: relative; overflow: hidden; }
+.kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--c, var(--accent)); }
+.kpiIcon { font-size: 22px; }
+.kpiValue { font-family: var(--font-display); font-size: 28px; font-weight: 700; letter-spacing: -1px; color: var(--c, var(--accent)); }
+.kpiLabel { font-size: 12px; color: var(--text3); }
+
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.card h2 { font-family: var(--font-display); font-size: 15px; font-weight: 600; }
+
+.profileList { display: flex; flex-direction: column; gap: 10px; }
+.profileRow { display: flex; align-items: center; gap: 10px; }
+.profileIcon { font-size: 18px; flex-shrink: 0; }
+.profileBar { flex: 1; }
+.profileBarLabel { display: flex; justify-content: space-between; font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+.barTrack { background: var(--bg3); border-radius: 99px; height: 5px; }
+.barFill { background: var(--accent); border-radius: 99px; height: 100%; transition: width 0.5s ease; }
+
+.messageStats { display: flex; align-items: center; gap: 24px; }
+.msgStat { flex: 1; text-align: center; }
+.msgStatValue { font-family: var(--font-display); font-size: 32px; font-weight: 700; }
+.msgStatLabel { font-size: 12px; color: var(--text3); margin-top: 4px; }
+.msgDivider { width: 1px; height: 48px; background: var(--border); }
+
+.ratio { }
+.ratioBar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; margin-bottom: 8px; }
+.ratioUser { background: #6C63FF; }
+.ratioAi { background: #10B981; }
+.ratioLabels { display: flex; gap: 16px; font-size: 12px; color: var(--text3); }
+
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th { text-align: left; color: var(--text3); font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.table td { padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text2); }
+.table tr:last-child td { border-bottom: none; }
+.badge { background: var(--accent-bg); color: var(--accent2); border-radius: 20px; padding: 3px 10px; font-size: 12px; white-space: nowrap; }
+.dateCell { color: var(--text3); }
+
+.exportBtns { display: flex; gap: 8px; flex-wrap: wrap; }
+.exportBtn { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); border-radius: var(--radius-sm); padding: 8px 16px; font-size: 13px; text-decoration: none; transition: all 0.15s; }
+.exportBtn:hover { border-color: var(--accent); color: var(--text); }
+
+@media (max-width: 640px) {
+  .row { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+}
